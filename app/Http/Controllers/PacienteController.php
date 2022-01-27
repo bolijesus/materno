@@ -129,7 +129,12 @@ class PacienteController extends Controller
      */
     public function destroy(Paciente $paciente)
     {
-        //
+        $paciente->delete();
+        return \redirect()->route('backoffice.paciente.index')->with('alert', \swal("
+                'El paciente Se elimino correctamente!',
+                ':D',
+                'success'
+            "));
     }
 
     //MIS METODOS [STORE,INDEX,VIEWS] A OTRAS PAGINAS
