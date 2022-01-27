@@ -17,10 +17,10 @@ class CreateCitaPacienteTable extends Migration
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('cita_id');
-            $table->foreign('cita_id')->references('id')->on('citas');
+            $table->foreign('cita_id')->references('id')->on('citas')->onDelete("CASCADE");
             
             $table->unsignedBigInteger('paciente_id');
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete("CASCADE");
 
             $table->timestamps();
         });
