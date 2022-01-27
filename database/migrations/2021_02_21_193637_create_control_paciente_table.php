@@ -17,10 +17,10 @@ class CreateControlPacienteTable extends Migration
             $table->bigIncrements('id');
             
             $table->unsignedBigInteger('control_id');
-            $table->foreign('control_id')->references('id')->on('controls');
+            $table->foreign('control_id')->references('id')->on('controls')->onDelete("CASCADE");
             
             $table->unsignedBigInteger('paciente_id');
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete("CASCADE");
                 
             $table->timestamps();
         });
