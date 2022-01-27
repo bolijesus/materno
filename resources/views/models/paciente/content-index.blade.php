@@ -25,8 +25,7 @@
                     <td>{{ $paciente->primer_nombre }}</td>
                     <td>{{ $paciente->primer_apellido }}</td>
                     <td>
-                        <form action="{{ route('backoffice.paciente.destroy',$paciente) }}" method="post"
-                            data-toggle="tooltip" data-placement="bottom" title data-original-title="Eliminar">
+                        <form action="{{ route('backoffice.paciente.destroy',$paciente) }}" method="post">
                             @method('DELETE') @csrf
                             <a href="{{ route('backoffice.paciente.show',$paciente) }}"
                                 class="btn btn-xs bg-teal waves-effect" data-toggle="tooltip" data-placement="bottom" title
@@ -40,7 +39,8 @@
                             </a>
 
                             <button type="submit"
-                                class="btn btn-xs btn-danger waves-effect "><i class="material-icons small">delete</i></button>
+                                class="btn btn-xs btn-danger waves-effect " data-toggle="tooltip" data-placement="bottom" title
+                                data-original-title="Eliminar"><i class="material-icons small">delete</i></button>
                         </form>
                     </td>
                 </tr>
